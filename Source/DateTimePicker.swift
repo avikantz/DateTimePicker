@@ -186,21 +186,21 @@ import UIKit
         // title view
         let titleView = UIView(frame: CGRect(origin: CGPoint.zero,
                                              size: CGSize(width: contentView.frame.width, height: 44)))
-        titleView.backgroundColor = .white
+        titleView.backgroundColor = highlightColor
         contentView.addSubview(titleView)
         
         dateTitleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 44))
         dateTitleLabel.font = UIFont.systemFont(ofSize: 15)
-        dateTitleLabel.textColor = darkColor
+        dateTitleLabel.textColor = .white
         dateTitleLabel.textAlignment = .center
         resetDateTitle()
         titleView.addSubview(dateTitleLabel)
         
         cancelButton = UIButton(type: .system)
         cancelButton.setTitle(cancelButtonTitle, for: .normal)
-        cancelButton.setTitleColor(darkColor.withAlphaComponent(0.5), for: .normal)
+        cancelButton.setTitleColor(.white, for: .normal)
         cancelButton.addTarget(self, action: #selector(DateTimePicker.dismissView(sender:)), for: .touchUpInside)
-        cancelButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
+        cancelButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         let cancelSize = cancelButton.sizeThatFits(CGSize(width: 0, height: 44.0)).width + 20.0
         cancelButton.frame = CGRect(x: 0, y: 0, width: cancelSize, height: 44)
         titleView.addSubview(cancelButton)
@@ -247,9 +247,9 @@ import UIKit
         doneButton.frame = CGRect(x: 10, y: contentView.frame.height - 10 - 44, width: contentView.frame.width - 20, height: 44)
         doneButton.setTitle(doneButtonTitle, for: .normal)
         doneButton.setTitleColor(.white, for: .normal)
-        doneButton.backgroundColor = darkColor.withAlphaComponent(0.5)
-        doneButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 13)
-        doneButton.layer.cornerRadius = 3
+		doneButton.backgroundColor = highlightColor
+        doneButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        doneButton.layer.cornerRadius = 4
         doneButton.layer.masksToBounds = true
         doneButton.addTarget(self, action: #selector(DateTimePicker.dismissView(sender:)), for: .touchUpInside)
         contentView.addSubview(doneButton)
@@ -304,7 +304,7 @@ import UIKit
         colonLabel1 = UILabel(frame: CGRect(x: 0, y: 0, width: 10, height: 36))
         colonLabel1.center = CGPoint(x: contentView.frame.width / 2 + extraSpace,
                                     y: (doneButton.frame.origin.y - borderBottomView.frame.origin.y - 10) / 2 + borderBottomView.frame.origin.y)
-        colonLabel1.text = ":"
+        colonLabel1.text = ""
         colonLabel1.font = UIFont.boldSystemFont(ofSize: 18)
         colonLabel1.textColor = highlightColor
         colonLabel1.textAlignment = .center
@@ -312,7 +312,7 @@ import UIKit
         contentView.addSubview(colonLabel1)
         
         colonLabel2 = UILabel(frame: CGRect(x: 0, y: 0, width: 10, height: 36))
-        colonLabel2.text = ":"
+        colonLabel2.text = ""
         colonLabel2.font = UIFont.boldSystemFont(ofSize: 18)
         colonLabel2.textColor = highlightColor
         colonLabel2.textAlignment = .center
