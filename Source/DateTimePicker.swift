@@ -304,7 +304,7 @@ import UIKit
         colonLabel1 = UILabel(frame: CGRect(x: 0, y: 0, width: 10, height: 36))
         colonLabel1.center = CGPoint(x: contentView.frame.width / 2 + extraSpace,
                                     y: (doneButton.frame.origin.y - borderBottomView.frame.origin.y - 10) / 2 + borderBottomView.frame.origin.y)
-        colonLabel1.text = ""
+        colonLabel1.text = ":"
         colonLabel1.font = UIFont.boldSystemFont(ofSize: 18)
         colonLabel1.textColor = highlightColor
         colonLabel1.textAlignment = .center
