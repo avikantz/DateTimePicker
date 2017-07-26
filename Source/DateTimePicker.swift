@@ -190,7 +190,7 @@ import UIKit
         contentView.addSubview(titleView)
         
         dateTitleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 44))
-        dateTitleLabel.font = UIFont.systemFont(ofSize: 15)
+        dateTitleLabel.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightMedium)
         dateTitleLabel.textColor = .white
         dateTitleLabel.textAlignment = .center
         resetDateTitle()
@@ -200,7 +200,7 @@ import UIKit
         cancelButton.setTitle(cancelButtonTitle, for: .normal)
         cancelButton.setTitleColor(.white, for: .normal)
         cancelButton.addTarget(self, action: #selector(DateTimePicker.dismissView(sender:)), for: .touchUpInside)
-        cancelButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: UIFontWeightBold)
         let cancelSize = cancelButton.sizeThatFits(CGSize(width: 0, height: 44.0)).width + 20.0
         cancelButton.frame = CGRect(x: 0, y: 0, width: cancelSize, height: 44)
         titleView.addSubview(cancelButton)
